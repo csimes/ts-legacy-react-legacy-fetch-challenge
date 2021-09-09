@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Weather from "./Weather";
 
 type GeolocationState = {
-    latitude: number
+    latitude: number,
     longitude: number
 }
+
 class Geolocation extends Component<{}, GeolocationState> {
     constructor(props: any) {
         super(props)
@@ -29,7 +31,7 @@ class Geolocation extends Component<{}, GeolocationState> {
     render() {
         return (
             <div>
-                {this.state.latitude}, {this.state.longitude}
+                <Weather lat={this.state.latitude} lon={this.state.longitude}/>
             </div>
         )
     }
